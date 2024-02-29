@@ -6,7 +6,7 @@ Large Language Models (LLMs) are prone to factuality hallucination, generating t
 
 
 ## Introduction
-This codebase contains the code for the paper "Multi-FAct: Assessing Multilingual LLMs’ Multi-Regional Knowledge using FActScore". 
+This codebase contains the code for the paper "Multi-FAct: Assessing Multilingual LLMs’ Multi-Regional Knowledge using FActScore" [arxiv](https://arxiv.org/abs/2402.18045). 
 
 This codebase is heavily built on top of the FActScore, which can be found [here](https://github.com/shmsw25/FActScore). Please cite the original paper too if you find this code useful.
 
@@ -28,4 +28,21 @@ The codebase is organized as follows:
 - `generate_bio.py`: contains the code to generate bios
 - `translate_bio_w_gpt.py`: contains the code to translate the bios to different languages
 - `quickstart.ipynb`: contains a quickstart guide to play with the code
+
+
+### Small Note
+Current Mistral model based atomic fact generation uses a fixed five shot prompting for atomic fact breakdown, which is slightly different from the original implementation, which prompts using top k most similar prompts among given examples. We found that fixed five shot prompting works provides pretty good accuracy for our tasks, but feel free to adopt the original prompting approach if you want to.
+
+If you find Multi-FAct useful, please cite the paper as follows:
+
+```
+@misc{shafayat2024multifact,
+      title={Multi-FAct: Assessing Multilingual LLMs' Multi-Regional Knowledge using FActScore}, 
+      author={Sheikh Shafayat and Eunsu Kim and Juhyun Oh and Alice Oh},
+      year={2024},
+      eprint={2402.18045},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
